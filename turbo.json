@@ -1,0 +1,37 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "cache": false,
+      "dependsOn": ["clean", "typecheck"]
+    },
+    "typecheck": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "deploy": {
+      "cache": false,
+      "dependsOn": ["test", "build"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {
+      "cache": false
+    },
+    "format": {
+      "cache": false
+    },
+    "serve": {
+      "cache": false
+    },
+    "superclean": {
+      "cache": false
+    },
+    "test": {
+      "cache": false
+    }
+  }
+}

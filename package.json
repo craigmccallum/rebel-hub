@@ -1,0 +1,56 @@
+{
+  "name": "rebel-hub-monorepo",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Rebel Hub Monorepo",
+  "type": "module",
+  "packageManager": "npm@18.16.1",
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "postinstall": "husky install && chmod +x .husky/_/husky.sh",
+    "serve": "turbo run serve",
+    "superclean": "turbo run superclean && rm -rf node_modules",
+    "test": "turbo run test"
+  },
+  "overrides": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.0.0",
+    "typescript": "^5.2.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@anatine/zod-mock": "^3.13.3",
+    "@types/jest": "^29.0.3",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
+    "babel-jest": "^29.0.3",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-sort-destructure-keys": "^1.4.0",
+    "husky": "^8.0.1",
+    "jest": "^29.0.3",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.0.2",
+    "tsconfig-paths": "^4.2.0",
+    "turbo": "==1.10.4"
+  }
+}

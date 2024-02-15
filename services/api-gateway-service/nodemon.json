@@ -1,0 +1,7 @@
+{
+  "ignore": [".git", "node_modules", "dist", "src/**/*.spec.ts"],
+  "verbose": false,
+  "watch": ["src/**/*.ts"],
+  "ext": "ts",
+  "exec": "node --inspect=0.0.0.0:9201 --experimental-specifier-resolution=node --loader ts-node/esm/transpile-only src/bootstrap.ts"
+}

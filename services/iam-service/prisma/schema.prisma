@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @unique
+  state        String
+  email        String?        @unique
+  phoneNumber  String?        @unique @map("phone_number")
+  password     String
+  AuthPassport AuthPassport[]
+
+  @@index([id])
+  @@map("users")
+}
+
+model AuthPassport {
+  id        String @unique
+  state     String
+  userId    String @map("user_id")
+  issuedAt  Int    @map("issued_at")
+  expiresAt Int    @map("expires_at")
+  user      User   @relation(fields: [userId], references: [id])
+
+  @@index([id])
+  @@map("auth_passports")
+}

@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta
+  title="Documentation / Breakpoints"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Breakpoints
+
+There are 5 breakpoints available to make building out pages in line with Figma designs as streamlined as possible:
+
+- `m` - `Mobile` - Screens from 0px to 599px
+- `t` - `Tablet` - Screens from 600px to 1024px
+- `l` - `Laptop` - Screens from 1025px to 1271px
+- `d` - `Desktop` - screens from 1272px up
+
+`m`, `t` and `l` are the 3 primary breakpoints and should be sufficient to cover 99% of use cases.
+
+`lm` is there for when designs really need to differ between small and large mobiles.
+
+`d` is there for when a specific desktop design is required. Both situations are unlikely but it's useful to know the options are there if needed.
+
+Using a mobile-first design system, all styles are from `m` and up by defualt.
